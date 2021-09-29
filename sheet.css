@@ -1,0 +1,18 @@
+/* Color that matches with food, like light color */
+
+header h1 {
+    font-weight: bold;
+    font-size: 36px;
+    color:bisque
+    display: inline
+}
+
+footer {
+    display: inline;
+    color: bisque;
+    padding: 40px 35px
+}
+
+footer h3 {
+    /* Color that matches with food, like light color */
+}
