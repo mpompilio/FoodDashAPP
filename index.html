@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodDashAPP</title>
-    <link rel="stylesheet" href="./sheet.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <!-- Serch on left and image on right may not be navigation option, unsure ;) -->
@@ -15,25 +15,34 @@
         FoodDashAPP
         </a>
     </h1>
+    <!--start content-->
+    <div id="About" class="content">
+        
+    </div>
     <nav>
         <!-- Nav bar -->
     <!-- Nav bar may have About US, Mission/Vision/Values/ Contact Us (??)-->
     <!-- Unordered list element-->
-    <li>
-        <a href="#about-us">About Us</a>
-    </li>
-    <li>
-        <a href="#misson-vison-values">Mission Vision Values</a>
-    </li>
-    <li>
-        <a href="contact-us">Contact Us</a>
-    </li>
-    </nav> 
+        <nav class="navbar">
+          <a href="#About US" class="w3-bar-item w3-button">About US</a>
+          <a href="# Mission/Vision/Values" class="w3-bar-item w3-button"> Mission/Vision/Values</a>
+          <a href="# Contact Us" class="w3-bar-item w3-button"> Contact Us</a>
+          <a href="# menu"> menu</a>
+          <a href="# review"> review</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+        </div>
 </header>
     <!-- serch by zip asks for user's zip-->
-    <button onclick="Search by Zip">Search by ZIP</button>
+    <form class="pure-form">
+        <input type="text" class="pure-input-rounded" />
+        <button type="submit" class="pure-button">Search</button>
+    </form>
     <!-- takes user to the list of available food stops located inside the given zipcode -->
-    <button onclick="Search by Zip">Go</button>
+    <button on click="Search Zip">Go</button>
     
      <!--Background picture, Temp selection, can be changed later with other available optons-->
     <!-- Photo source: https://unsplash.com/photos/jRD-MnPTrSk -->
