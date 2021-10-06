@@ -1,75 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodDashAPP</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
+
 <body>
-<!-- Serch on left and image on right may not be navigation option, unsure ;) -->
     <header>
-        <h1> 
-        <a href="/">
-        FoodDashAPP
-        </a>
-    </h1>
-    <!--start content-->
-    <div id="About" class="content">
-        
-    </div>
-    <nav>
-        <!-- Nav bar -->
-    <!-- Nav bar may have About US, Mission/Vision/Values/ Contact Us (??)-->
-    <!-- Unordered list element-->
-        <nav class="navbar">
-          <a href="#About US" class="w3-bar-item w3-button">About US</a>
-          <a href="# Mission/Vision/Values" class="w3-bar-item w3-button"> Mission/Vision/Values</a>
-          <a href="# Contact Us" class="w3-bar-item w3-button"> Contact Us</a>
-          <a href="# menu"> menu</a>
-          <a href="# review"> review</a>
-        </nav>
 
-        <div class="icons">
-            <i class="fas fa-bars" id="bars"></i>
-            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="logo"><i class="fas-fa-untensils"></i>FoodDashAPP</a>
+
+            <!-- Nav bar -->
+            <nav class="navbar">
+                <a class="active" href="about.html">About US</a>
+                <a href="# Mission/Vision/Values"> Mission/Vision/Values</a>
+                <a href="# Contact Us"> Contact Us</a>
+            </nav>
+
+    </header>
+    <main class="container">
+        <div >
+            <div class="left-side">
+                <h3>Search By Brewery</h3>
+                <form id="user-form" class="pure-form">
+                  <label for="brewery">Brewery</label>
+                  <input name="brewery" id="brewery" type="text" autofocus="true"/>
+                  <button type="submit" class="pure-button">Get Brewery</button>
+                </form>
+              </div>
         </div>
-</header>
-    <!-- serch by zip asks for user's zip-->
-    <form class="pure-form">
-        <input type="text" class="pure-input-rounded" />
-        <button type="submit" class="pure-button">Search</button>
-    </form>
-    <!-- takes user to the list of available food stops located inside the given zipcode -->
-    <button on click="Search Zip">Go</button>
-    
-     <!--Background picture, Temp selection, can be changed later with other available optons-->
-    <!-- Photo source: https://unsplash.com/photos/jRD-MnPTrSk -->
-    <img src="khoa-do-jRD-MnPTrSk-unsplash.jpg" width="500" height ="350" alt="TBD-Background photo">
-    
-    <div>
-        <!-- This div may include content for text description-->
-    </div>
-    
-    <div>
-        <!-- Image, name, location, URL section-->
-        <div> 
-            <p>Image section</p>
-        </div>
-        <div> 
-            <p>Location section</p>
-        </div>
+      
         <div>
-            <p>URL section</p>
-        </div>
+        <div class="right-side">
+            <h2>Showing Breweries for: <span id="brew-search-term"></span></h2>
+            <div id="brew-container" class="list-group">
+                <ul class="brew-info" id="each-brew">
 
-        
-    </div>
-    <!-- footer -->
-  <footer>
-    <h3>Made with ❤️ by Team 4</h2>
-  </footer>
+                </ul>
+
+            </div>
+            </div>
+        </div>
+      </main>
+
+
+<script src="./assets/js/script.js"></script>
 </body>
-</body>
+
 </html>
