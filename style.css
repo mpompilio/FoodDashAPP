@@ -232,10 +232,9 @@ ul li a:hover{
     align-items:flex-end;
     border-radius: 15px;
 }
-/*Designing the footer*/
-footer{
-    text-align: center;
-}
+
+
+
 /*Designing of Contact Us*/
 #ContactUs{
     width:100vw;
@@ -320,3 +319,4 @@ footer{
     #container1{
         height:44vh
     }
+
