@@ -42,7 +42,7 @@ var displayBrews = function(brews, searchTerm) {
 
 
     // loop over breweries
-for (var i = 0; i < brews.length; i++) {
+for (var i = 0; i < 16; i++) {
     // format brewerie name
     var brewName = brews[i].name;
   
@@ -68,10 +68,16 @@ for (var i = 0; i < brews.length; i++) {
     var website = brews[i].website_url;
 
     var websiteEl = document.createElement("li");
-    websiteEl.textContent = website;
     websiteEl.classList.add("list-el");
+    websiteEl.setAttribute("href", website);
+
+    var url = document.createElement("a");
+    url.textContent = website;
+    url.setAttribute("href", website);
+    url.classList.add("href-el");
 
 
+    websiteEl.appendChild(url);
     eachBrew.appendChild(titleEl);
     eachBrew.appendChild(addressEl);
     eachBrew.appendChild(websiteEl);
@@ -87,14 +93,14 @@ for (var i = 0; i < brews.length; i++) {
 }
 
 
-var getBrewImage = function(brews) {
+ var getBrewImage = function(brews) {
  
     for(i = 0; i < brews.length; i++){
     var name = brews[i].name;
     console.log(name);
     elementNumber = 0;
 
-    var apiUrl = "https://powerful-retreat-80790.herokuapp.com/https://serpapi.com/search.json?q=" + name + "&tbm=isch&ijn=0&api_key=ad90e0fa003f5fd59217ba685e87d791186b437dfd15fa9351b42ad5a61f169f";
+    var apiUrl = "https://powerful-retreat-80790.herokuapp.com/https://serpapi.com/search.json?q=" + name + "&tbm=isch&ijn=0&api_key=ccd971b23596c13a0bdce3cd7b909230b0122d33a9ba9aca33d314f621af172d";
 
     // make a request to the url
     fetch(apiUrl).then(function (response) {
@@ -131,6 +137,6 @@ var displayImage = function(images) {
     elementNumber++;
 
 
-}
+} 
 
 userFormEl.addEventListener("submit", formSubmitHandler);
