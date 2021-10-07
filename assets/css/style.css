@@ -13,7 +13,6 @@
     text-decoration: none;
     outline: none;
     border: none;
-    text-transform: capitalize;
     transition: all .2a linear;
 }
 
@@ -155,8 +154,14 @@ header .icons #menu-bars {
 
 .list-el {
     padding: 5px 0 5px 0;
-    border: 1px solid black;
+
     margin: 5px;
     list-style: none;
     text-align: center;
+}
+
+.img-tag {
+    width: 250px;
+    height: 200px;
+
 }
