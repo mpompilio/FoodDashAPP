@@ -94,7 +94,7 @@ var getBrewImage = function(brews) {
     console.log(name);
     elementNumber = 0;
 
-    var apiUrl = "https://powerful-retreat-80790.herokuapp.com/https://serpapi.com/search.json?q=" + name + "&tbm=isch&ijn=0&api_key=ad90e0fa003f5fd59217ba685e87d791186b437dfd15fa9351b42ad5a61f169f";
+    var apiUrl = "https://powerful-retreat-80790.herokuapp.com/https://serpapi.com/search.json?q=" + name + "&tbm=isch&ijn=0&api_key=ccd971b23596c13a0bdce3cd7b909230b0122d33a9ba9aca33d314f621af172d";
 
     // make a request to the url
     fetch(apiUrl).then(function (response) {
