@@ -42,7 +42,7 @@ var displayBrews = function(brews, searchTerm) {
 
 
     // loop over breweries
-for (var i = 0; i < brews.length; i++) {
+for (var i = 0; i < 16; i++) {
     // format brewerie name
     var brewName = brews[i].name;
   
@@ -68,10 +68,16 @@ for (var i = 0; i < brews.length; i++) {
     var website = brews[i].website_url;
 
     var websiteEl = document.createElement("li");
-    websiteEl.textContent = website;
     websiteEl.classList.add("list-el");
+    websiteEl.setAttribute("href", website);
+
+    var url = document.createElement("a");
+    url.textContent = website;
+    url.setAttribute("href", website);
+    url.classList.add("href-el");
 
 
+    websiteEl.appendChild(url);
     eachBrew.appendChild(titleEl);
     eachBrew.appendChild(addressEl);
     eachBrew.appendChild(websiteEl);
@@ -87,7 +93,7 @@ for (var i = 0; i < brews.length; i++) {
 }
 
 
-var getBrewImage = function(brews) {
+ var getBrewImage = function(brews) {
  
     for(i = 0; i < brews.length; i++){
     var name = brews[i].name;
@@ -131,6 +137,6 @@ var displayImage = function(images) {
     elementNumber++;
 
 
-}
+} 
 
 userFormEl.addEventListener("submit", formSubmitHandler);
