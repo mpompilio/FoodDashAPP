@@ -42,7 +42,7 @@ var displayBrews = function(brews, searchTerm) {
 
 
     // loop over breweries
-for (var i = 0; i < 16; i++) {
+for (var i = 0; i < brews.length; i++) {
     // format brewerie name
     var brewName = brews[i].name;
   
@@ -89,7 +89,12 @@ for (var i = 0; i < 16; i++) {
     // append container to the dom
     brewContainerEl.appendChild(brewEl);
 
+    if(i === 4){
+        break;
+    }
+
   }
+
 }
 
 
@@ -109,6 +114,11 @@ for (var i = 0; i < 16; i++) {
             displayImage(data);
         });
     });
+
+    if(i === 4){
+        break;
+    }
+
     }
 }
 
