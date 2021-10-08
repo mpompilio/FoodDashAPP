@@ -136,7 +136,7 @@ for (var i = 0; i < brews.length; i++) {
     console.log(name);
     elementNumber = 0;
 
-    var apiUrl = "https://powerful-retreat-80790.herokuapp.com/https://serpapi.com/search.json?q=" + name + "&tbm=isch&ijn=0&api_key=f968aa8ed0f800597be7e0cb0fb911630e38c6beb429c98071a6ad3085d9bd93";
+    var apiUrl = "https://powerful-retreat-80790.herokuapp.com/https://serpapi.com/search.json?q=" + name + "&tbm=isch&ijn=0&api_key=e434585455faef613bb541c3a061ffe05feb8013bfc2c5455180faa4f52d08b3";
 
     // make a request to the url
     fetch(apiUrl).then(function (response) {
