@@ -99,7 +99,7 @@ body {
     border-radius: 25px;
     margin: 15px;
     text-align: center;
-    color: white;
+    color: #a52a2a;
 }
 
 .list-el {
@@ -145,8 +145,12 @@ address {
 
 .input-list {
     list-style: none;
-    border: 1px solid black;
+    border: 2px solid;
+    border-color: #a52a2a;
+    border-radius: 25px;
     padding: 15px 5px 15px 5px;
+    color: #a52a2a;
+    margin: 5px;
 }
 
 .past-searches {
