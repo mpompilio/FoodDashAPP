@@ -3,12 +3,14 @@ var brewInputEl = document.querySelector("#brewery");
 
 var brewContainerEl = document.querySelector("#brew-container");
 var brewSearchTerm = document.querySelector("#brew-search-term");
+var pastSearches = document.querySelector(".past-searches");
 var eachBrew;
 var elementNumber = 0;
 
+var loadData = [];
 
 var getBrews = function (brew) {
-    // format the github api url
+  //
     var apiUrl = "https://api.openbrewerydb.org/breweries/search?query=" + brew;
 
     // make a request to the url
@@ -33,7 +35,36 @@ var formSubmitHandler = function (event) {
     }
 
     console.log(event);
+
+    loadData.push(brewery);
+    saveInput();
+    displayInput();
 };
+
+
+var displayInput = function () {
+
+    pastSearches.textContent = "";
+
+    var saveArr = JSON.parse(localStorage.getItem("breweries"));
+
+    for (var i = 0; i < saveArr.length; i++) {
+
+        var saved = document.createElement("li");
+        saved.setAttribute("id", i);
+        saved.classList = "input-list";
+        saved.textContent = saveArr[i];
+        pastSearches.appendChild(saved);
+
+        saved.addEventListener('click', function() {
+            console.log("worked");
+        })
+    }
+
+    
+
+}
+
 
 var displayBrews = function(brews, searchTerm) {
     brewContainerEl.textContent = "";
@@ -105,7 +136,7 @@ for (var i = 0; i < brews.length; i++) {
     console.log(name);
     elementNumber = 0;
 
-    var apiUrl = "https://powerful-retreat-80790.herokuapp.com/https://serpapi.com/search.json?q=" + name + "&tbm=isch&ijn=0&api_key=ccd971b23596c13a0bdce3cd7b909230b0122d33a9ba9aca33d314f621af172d";
+    var apiUrl = "https://powerful-retreat-80790.herokuapp.com/https://serpapi.com/search.json?q=" + name + "&tbm=isch&ijn=0&api_key=f968aa8ed0f800597be7e0cb0fb911630e38c6beb429c98071a6ad3085d9bd93";
 
     // make a request to the url
     fetch(apiUrl).then(function (response) {
@@ -149,4 +180,25 @@ var displayImage = function(images) {
 
 } 
 
+//Loads Data
+var loadInput = function () {
+    var loadBreweries = JSON.parse(localStorage.getItem('breweries'));
+
+
+    for (i = 0; i < loadBreweries.length; i++) {
+        loadData.push(loadBreweries[i]);
+
+    }
+}
+
+
+//Saves Data
+var saveInput = function () {
+
+    localStorage.setItem('breweries', JSON.stringify(loadData));
+}
+
 userFormEl.addEventListener("submit", formSubmitHandler);
+
+loadInput();
+displayInput();
