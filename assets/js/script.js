@@ -23,6 +23,8 @@ var getBrews = function (brew) {
     });
 };
 
+
+//Form submit when search button is pressed
 var formSubmitHandler = function (event) {
     event.preventDefault();
     var brewery = brewInputEl.value.trim();
@@ -41,7 +43,7 @@ var formSubmitHandler = function (event) {
     displayInput();
 };
 
-
+//Displays the loaded localStorage data into a list
 var displayInput = function () {
 
     pastSearches.textContent = "";
@@ -65,7 +67,7 @@ var displayInput = function () {
 
 }
 
-
+//Displays information about the breweries found when pulling from the API
 var displayBrews = function(brews, searchTerm) {
     brewContainerEl.textContent = "";
     brewSearchTerm.textContent = searchTerm;
@@ -74,22 +76,24 @@ var displayBrews = function(brews, searchTerm) {
 
     // loop over breweries
 for (var i = 0; i < brews.length; i++) {
-    // format brewerie name
+    // format brewery name
     var brewName = brews[i].name;
   
     // create a container for each brewery
     var brewEl = document.createElement("div");
     brewEl.classList.add("each-brew");
   
-    // create a span element to hold repository name
+    // create a name of brewery
     var titleEl = document.createElement("h2");
     titleEl.textContent = brewName;
     titleEl.classList.add("title-el");
 
+    //creates a ul that holds list items
     eachBrew = document.createElement("ul");
     eachBrew.classList.add("ul-brew");
     eachBrew.setAttribute("id", "number-" + i);
 
+    //adds the brewery information to the lists
     var address = brews[i].street + " " + brews[i].city + " " + brews[i].state; 
 
     var addressEl = document.createElement("li");
@@ -120,6 +124,7 @@ for (var i = 0; i < brews.length; i++) {
     // append container to the dom
     brewContainerEl.appendChild(brewEl);
 
+    //stops the amount of breweries displayed
     if(i === 4){
         break;
     }
@@ -128,7 +133,7 @@ for (var i = 0; i < brews.length; i++) {
 
 }
 
-
+//gets the image of brewery from Google Images based off of the Brewery Name
  var getBrewImage = function(brews) {
  
     for(i = 0; i < brews.length; i++){
@@ -146,6 +151,7 @@ for (var i = 0; i < brews.length; i++) {
         });
     });
 
+    //also stops looking for images after 4 loops
     if(i === 4){
         break;
     }
@@ -153,6 +159,7 @@ for (var i = 0; i < brews.length; i++) {
     }
 }
 
+//displays the images 
 var displayImage = function(images) {
   
     
@@ -198,6 +205,8 @@ var saveInput = function () {
     localStorage.setItem('breweries', JSON.stringify(loadData));
 }
 
+
+//calls functions
 userFormEl.addEventListener("submit", formSubmitHandler);
 
 loadInput();
